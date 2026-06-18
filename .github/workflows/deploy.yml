@@ -8,22 +8,30 @@ on:
     branches:
       - '*'
 
+# Allow the deploy job to publish to GitHub Pages.
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Only one Pages deploy at a time; don't cancel an in-progress one.
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
-      - name: Setup Python
-        uses: actions/setup-python@v5
+      # micromamba provides Python and the whole build env from
+      # build-environment.yml, so no separate actions/setup-python is needed.
+      - name: Install build environment
+        uses: mamba-org/setup-micromamba@v2
         with:
-          python-version: '3.12'
-
-      - name: Install mamba
-        uses: mamba-org/setup-micromamba@v1
-        with:
-          micromamba-version: '1.5.8-0'
+          micromamba-version: 'latest'
           environment-file: build-environment.yml
           cache-environment: true
 
@@ -41,9 +49,6 @@ jobs:
   deploy:
     needs: build
     if: github.ref == 'refs/heads/main'
-    permissions:
-      pages: write
-      id-token: write
 
     environment:
       name: github-pages

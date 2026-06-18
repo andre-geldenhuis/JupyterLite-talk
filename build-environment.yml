@@ -5,5 +5,8 @@ dependencies:
   - python
   - pip
   - jupyter_server
-  - jupyterlite-core >=0.4.1,<0.5.0
-  - jupyterlite-xeus>=2.0.0,<3
+  - jupyterlite-core >=0.7,<0.8
+  - jupyterlite-xeus >=4,<5
+  # Slideshow / deck support: presents the notebook as a reveal-style deck
+  # inside JupyterLite, with the xeus kernel staying live during the talk.
+  - jupyterlab-deck >=0.2.0

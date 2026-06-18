@@ -114,3 +114,11 @@ dmypy.json
 # jupyterlite
 *.doit.db
 _output
+
+# OpenWolf / local agent tooling (kept local, not published)
+.wolf/
+.claude/
+CLAUDE.md
+
+# build artifact: deploy copies README.md into content/ at build time
+content/README.md
