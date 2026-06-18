@@ -1,12 +1,18 @@
-# xeus-python + JupyterLite demo
+# JupyterLite talk — interactive Python in the browser
 
-[![lite-badge](https://jupyterlite.rtfd.io/en/latest/_static/badge.svg)](https://jupyterlite.github.io/xeus-python-demo/notebooks/?path=demo.ipynb)
+[![lite-badge](https://jupyterlite.rtfd.io/en/latest/_static/badge.svg)](https://andre-geldenhuis.github.io/JupyterLite-talk/)
 
-xeus-python + JupyterLite deployed as a static site to GitHub Pages, for demo purposes. My version.
+A talk on JupyterLite + xeus, presented as a live slide deck (`jupyterlab-deck`) and
+deployed as a static site to GitHub Pages. Everything runs in your browser — no server.
 
 ## ✨ Try it in your browser ✨
 
-https://jupyterlite.github.io/xeus-python-demo/notebooks/?path=demo.ipynb
+**Live site:** https://andre-geldenhuis.github.io/JupyterLite-talk/
+
+**Straight into the talk deck:** https://andre-geldenhuis.github.io/JupyterLite-talk/lab/index.html?path=talk.ipynb
+
+> To present: open the deck link, run **Run → Run All Cells**, then start deck mode
+> (the slideshow/deck button in the toolbar, or command palette → *Start Deck*).
 
 ## ≠ How does it compare to the Pyodide kernel?
 
